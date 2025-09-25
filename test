@@ -1,0 +1,97 @@
+!! Test program "Linear Algorithm" !!
+
+startprogram
+variable int_2 _a1, _b2, _x1, _y1;
+startblock
+    get _a1;
+    get _b2;
+
+    put (_a1 + _b2);
+    put (_a1 - _b2);
+    put (_a1 * _b2);
+    put (_a1 / _b2);
+    put (_a1 % _b2);
+
+    (_a1 - _b2) * 10 + (_a1 + _b2) / 10 -> _x1;
+    _x1 + _x1 % 10 -> _y1;
+
+    put (_x1);
+    put (_y1);
+endblock
+
+!! Test program "Branching Algorithm" !!
+
+startprogram
+variable int_2 _a1, _b2, _c3, _mx1;
+startblock
+    get _a1;
+    get _b2;
+    get _c3;
+
+    !! Find maximum !!
+    if _a1 gr _b2 {
+        if _a1 gr _c3 {
+            _a1 -> _mx1;
+        } else {
+            _c3 -> _mx1;
+        }
+    } else {
+        if _b2 gr _c3 {
+            _b2 -> _mx1;
+        } else {
+            _c3 -> _mx1;
+        }
+    }
+    put (_mx1);
+
+    !! Check if all are equal !!
+    if _a1 eq _b2 and _a1 eq _c3 and _b2 eq _c3 {
+        put 1;
+    } else {
+        put 0;
+    }
+
+    !! At least one is negative !!
+    if _a1 less 0 or _b2 less 0 or _c3 less 0 {
+        put -1;
+    } else {
+        put 0;
+    }
+
+    !! A > (B + C) !!
+    if ! (_a1 less (_b2 + _c3)) {
+        put 10;
+    } else {
+        put 0;
+    }
+endblock
+
+!! Test program "Loop Algorithm" !!
+
+startprogram
+variable int_2 _a1, _b2, _i1, _j1, _x1;
+startblock
+    get _a1;
+    get _b2;
+
+    !! Squares from A to B inclusive !!
+    _a1 -> _i1;
+    while _i1 less (_b2 + 1) {
+        put (_i1 * _i1);
+        _i1 + 1 -> _i1;
+    }
+
+    !! X = A * B using nested loops !!
+    0 -> _x1;
+    1 -> _i1;
+    while _i1 less (_a1 + 1) {
+        1 -> _j1;
+        while _j1 less (_b2 + 1) {
+            _x1 + 1 -> _x1;
+            _j1 + 1 -> _j1;
+        }
+        _i1 + 1 -> _i1;
+    }
+
+    put (_x1);
+endblock
