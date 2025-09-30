@@ -1,0 +1,35 @@
+startprogram
+variable int_2 _a1, _b2, _c3, _mx1;
+
+startblock
+    get _a1;
+    get _b2;
+    get _c3;
+
+    if (_a1 gr _b2) and (_a1 gr _c3) {
+        _a1 -> _mx1;
+    } else if (_b2 gr _a1) and (_b2 gr _c3) {
+        _b2 -> _mx1;
+    } else {
+        _c3 -> _mx1;
+    }
+    put (_mx1);
+
+    if (_a1 eq _b2) and (_a1 eq _c3) and (_b2 eq _c3) {
+        put (1);
+    } else {
+        put (0);
+    }
+
+    if (_a1 less 0) or (_b2 less 0) or (_c3 less 0) {
+        put (-1);
+    } else {
+        put (0);
+    }
+
+    if ! (_a1 less (_b2 + _c3)) {
+        put (10);
+    } else {
+        put (0);
+    }
+endblock
