@@ -1,0 +1,27 @@
+startprogram
+variable int_2 _a1, _b2, _i1, _j1, _x1;
+
+startblock
+    get _a1;
+    get _b2;
+
+    _a1 -> _i1;
+    while (_i1 less (_b2 + 1)) do {
+        put (_i1 * _i1);
+        _i1 + 1 -> _i1;
+    }
+
+    0 -> _x1;
+    1 -> _i1;
+
+    while (_i1 less (_a1 + 1)) do {
+        1 -> _j1;
+        while (_j1 less (_b2 + 1)) do {
+            _x1 + 1 -> _x1;
+            _j1 + 1 -> _j1;
+        }
+        _i1 + 1 -> _i1;
+    }
+
+    put (_x1);
+endblock
