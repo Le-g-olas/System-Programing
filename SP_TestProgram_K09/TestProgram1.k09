@@ -1,0 +1,19 @@
+startprogram
+variable int_2 _a1, _b2, _x1, _y1;
+
+startblock
+    get _a1;
+    get _b2;
+
+    put (_a1 + _b2);
+    put (_a1 - _b2);
+    put (_a1 * _b2);
+    put (_a1 / _b2);
+    put (_a1 % _b2);
+
+    (_a1 - _b2) * 10 + (_a1 + _b2) / 10 -> _x1;
+    _x1 + _x1 % 10 -> _y1;
+
+    put (_x1);
+    put (_y1);
+endblock
