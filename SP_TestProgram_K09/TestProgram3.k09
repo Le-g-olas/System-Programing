@@ -6,7 +6,7 @@ startblock
     get _b2;
 
     _a1 -> _i1;
-    while (_i1 less (_b2 + 1)) do {
+    while (_i1 less (_b2 + 1)) {
         put (_i1 * _i1);
         _i1 + 1 -> _i1;
     }
@@ -14,9 +14,9 @@ startblock
     0 -> _x1;
     1 -> _i1;
 
-    while (_i1 less (_a1 + 1)) do {
+    while (_i1 less (_a1 + 1)) {
         1 -> _j1;
-        while (_j1 less (_b2 + 1)) do {
+        while (_j1 less (_b2 + 1)) {
             _x1 + 1 -> _x1;
             _j1 + 1 -> _j1;
         }
