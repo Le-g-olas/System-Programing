@@ -1,5 +1,5 @@
 startprogram
-variable int_2 _a1, _b2, _c3, _mx1;
+variable int_2 _a1, _b2, _c3, _m1;
 
 startblock
     get _a1;
@@ -7,13 +7,13 @@ startblock
     get _c3;
 
     if (_a1 gr _b2) and (_a1 gr _c3) {
-        _a1 -> _mx1;
+        _a1 -> _m1;
     } else if (_b2 gr _a1) and (_b2 gr _c3) {
-        _b2 -> _mx1;
+        _b2 -> _m1;
     } else {
-        _c3 -> _mx1;
+        _c3 -> _m1;
     }
-    put (_mx1);
+    put (_m1);
 
     if (_a1 eq _b2) and (_a1 eq _c3) and (_b2 eq _c3) {
         put (1);
